@@ -12,6 +12,8 @@
 		5D77D8492BBB9E80008EB440 /* VCSettingsConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8472BBB9E80008EB440 /* VCSettingsConvert.swift */; };
 		5D77D84A2BBB9E80008EB440 /* VCSettingsConvert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D77D8482BBB9E80008EB440 /* VCSettingsConvert.xib */; };
 		5D77D84D2BBBBAC9008EB440 /* yt-dlp_macos in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5D77D8532BBC080B008EB440 /* DLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8522BBC080A008EB440 /* DLSignal.swift */; };
+		5D77D8552BBC089F008EB440 /* DLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8542BBC089F008EB440 /* DLManager.swift */; };
 		5D8D46AA2BBB0F580041144E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D46A92BBB0F580041144E /* AppDelegate.swift */; };
 		5D8D46AC2BBB0F5B0041144E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */; };
 		5D8D46AF2BBB0F5B0041144E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8D46AD2BBB0F5B0041144E /* MainMenu.xib */; };
@@ -92,6 +94,8 @@
 		5D77D8482BBB9E80008EB440 /* VCSettingsConvert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCSettingsConvert.xib; sourceTree = "<group>"; };
 		5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "yt-dlp_macos"; sourceTree = "<group>"; };
 		5D77D84F2BBBBC85008EB440 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
+		5D77D8522BBC080A008EB440 /* DLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSignal.swift; sourceTree = "<group>"; };
+		5D77D8542BBC089F008EB440 /* DLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLManager.swift; sourceTree = "<group>"; };
 		5D8D46A62BBB0F580041144E /* Kittybot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kittybot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8D46A92BBB0F580041144E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,10 +211,10 @@
 				5D8D47022BBB95990041144E /* Settings */,
 				5D8D46F92BBB107B0041144E /* VideoDownload */,
 				5D8D46A92BBB0F580041144E /* AppDelegate.swift */,
-				5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */,
-				5D8D46AD2BBB0F5B0041144E /* MainMenu.xib */,
 				5D8D46FE2BBB15F90041144E /* WDMain.swift */,
 				5D8D46FF2BBB15F90041144E /* WDMain.xib */,
+				5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */,
+				5D8D46AD2BBB0F5B0041144E /* MainMenu.xib */,
 				5D8D46B02BBB0F5B0041144E /* Supporter.entitlements */,
 			);
 			path = Supporter;
@@ -254,6 +258,8 @@
 		5D8D46F82BBB10210041144E /* SupportDL */ = {
 			isa = PBXGroup;
 			children = (
+				5D77D8522BBC080A008EB440 /* DLSignal.swift */,
+				5D77D8542BBC089F008EB440 /* DLManager.swift */,
 			);
 			path = SupportDL;
 			sourceTree = "<group>";
@@ -516,6 +522,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8D46DB2BBB0FBB0041144E /* SupporterCore.docc in Sources */,
+				5D77D8532BBC080B008EB440 /* DLSignal.swift in Sources */,
+				5D77D8552BBC089F008EB440 /* DLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +698,7 @@
 		5D8D46CA2BBB0F5C0041144E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Supporter/Supporter.entitlements;
@@ -720,6 +729,7 @@
 		5D8D46CB2BBB0F5C0041144E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Supporter/Supporter.entitlements;
@@ -902,6 +912,7 @@
 		5D8D46F32BBB0FBB0041144E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FXSVDYCN2P;
@@ -923,6 +934,7 @@
 		5D8D46F42BBB0FBB0041144E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FXSVDYCN2P;

@@ -9,7 +9,6 @@ import Cocoa
 
 class WDMain: NSWindowController {
     
-    @IBOutlet var tvOutput: NSTextView!
     let wndProgress = WDVideoProgress(windowNibName: "WDVideoProgress")
     let wndSettings = WDSettings(windowNibName: "WDSettings")
     @IBOutlet weak var popUpFormat: NSPopUpButton!
@@ -54,13 +53,13 @@ class WDMain: NSWindowController {
                 }
                 print("New ouput: \(line)")
                 DispatchQueue.main.async {
-                    self.tvOutput.string.append(line)
+                    // TODO: Signal
                 }
                 
             } else {
                 print("Error decoding data: \(pipe.availableData)")
                 DispatchQueue.main.async {
-                    self.tvOutput.string.append(String(data: pipe.availableData, encoding: .utf8) ?? "Unknown Error")
+                    // TODO: Signal
                 }
             }
         }

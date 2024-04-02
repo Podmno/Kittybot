@@ -107,3 +107,50 @@ New ouput: [VideoConvertor] Converting video from mp4 to mov; Destination: /User
 
 New ouput: Deleting original file /Users/kimno/Downloads/【FF14】老主顾-阿梅莉安丝……欸，真的是她吗？ [BV1Km411r74P].mp4 (pass -k to keep)
 ```
+
+```log
+
+New ouput: [generic] Extracting URL: https://x.com/NoCatsNoLife_m/status/1774969030199439618?s=20
+[generic] 1774969030199439618?s=20: Downloading webpage
+
+New ouput: [redirect] Following redirect to https://twitter.com/NoCatsNoLife_m/status/1774969030199439618?s=20
+
+New ouput: [twitter] Extracting URL: https://twitter.com/NoCatsNoLife_m/status/1774969030199439618?s=20
+
+New ouput: [twitter] 1774969030199439618: Downloading guest token
+
+New ouput: [twitter] 1774969030199439618: Downloading GraphQL JSON
+
+New ouput: [twitter] 1774969030199439618: Downloading m3u8 information
+
+New ouput: [info] 1774968973693730816: Downloading 1 format(s): http-2176
+
+New ouput: [download] Destination: /Users/kimno/Downloads/No Cats No Life - stretching 🥰 [1774968973693730816].mp4
+
+New ouput: 
+[download]   0.1% of    1.34MiB at   21.87KiB/s ETA 01:02
+New ouput: 
+[download]   0.2% of    1.34MiB at   63.01KiB/s ETA 00:21
+New ouput: 
+[download]   0.5% of    1.34MiB at  140.42KiB/s ETA 00:09
+New ouput: 
+[download]   1.1% of    1.34MiB at  290.75KiB/s ETA 00:04
+New ouput: 
+[download]   2.3% of    1.34MiB at  360.12KiB/s ETA 00:03
+New ouput: 
+[download]   4.6% of    1.34MiB at  464.49KiB/s ETA 00:02
+New ouput: 
+[download]   9.2% of    1.34MiB at  673.99KiB/s ETA 00:01
+New ouput: 
+[download]  18.5% of    1.34MiB at    1.03MiB/s ETA 00:01
+New ouput: 
+[download]  37.1% of    1.34MiB at    1.63MiB/s ETA 00:00
+New ouput: 
+[download]  74.4% of    1.34MiB at    2.65MiB/s ETA 00:00
+New ouput: 
+[download] 100.0% of    1.34MiB at    3.29MiB/s ETA 00:00
+New ouput: 
+[download] 100% of    1.34MiB in 00:00:00 at 2.36MiB/s   
+New ouput: 
+
+```

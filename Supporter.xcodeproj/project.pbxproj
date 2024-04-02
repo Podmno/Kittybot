@@ -12,7 +12,6 @@
 		5D77D8492BBB9E80008EB440 /* VCSettingsConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8472BBB9E80008EB440 /* VCSettingsConvert.swift */; };
 		5D77D84A2BBB9E80008EB440 /* VCSettingsConvert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D77D8482BBB9E80008EB440 /* VCSettingsConvert.xib */; };
 		5D77D84D2BBBBAC9008EB440 /* yt-dlp_macos in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		5D77D8532BBC080B008EB440 /* DLSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8522BBC080A008EB440 /* DLSignal.swift */; };
 		5D77D8552BBC089F008EB440 /* DLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8542BBC089F008EB440 /* DLManager.swift */; };
 		5D8D46AA2BBB0F580041144E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D46A92BBB0F580041144E /* AppDelegate.swift */; };
 		5D8D46AC2BBB0F5B0041144E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */; };
@@ -94,7 +93,6 @@
 		5D77D8482BBB9E80008EB440 /* VCSettingsConvert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCSettingsConvert.xib; sourceTree = "<group>"; };
 		5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "yt-dlp_macos"; sourceTree = "<group>"; };
 		5D77D84F2BBBBC85008EB440 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
-		5D77D8522BBC080A008EB440 /* DLSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLSignal.swift; sourceTree = "<group>"; };
 		5D77D8542BBC089F008EB440 /* DLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLManager.swift; sourceTree = "<group>"; };
 		5D8D46A62BBB0F580041144E /* Kittybot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kittybot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8D46A92BBB0F580041144E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 		5D8D46F82BBB10210041144E /* SupportDL */ = {
 			isa = PBXGroup;
 			children = (
-				5D77D8522BBC080A008EB440 /* DLSignal.swift */,
 				5D77D8542BBC089F008EB440 /* DLManager.swift */,
 			);
 			path = SupportDL;
@@ -522,7 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D8D46DB2BBB0FBB0041144E /* SupporterCore.docc in Sources */,
-				5D77D8532BBC080B008EB440 /* DLSignal.swift in Sources */,
 				5D77D8552BBC089F008EB440 /* DLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,7 +768,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supporter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Supporter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kittybot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kittybot";
 			};
 			name = Debug;
 		};
@@ -791,7 +787,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supporter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Supporter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kittybot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kittybot";
 			};
 			name = Release;
 		};
@@ -808,7 +804,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Supporter;
+				TEST_TARGET_NAME = Kittybot;
 			};
 			name = Debug;
 		};
@@ -825,7 +821,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Supporter;
+				TEST_TARGET_NAME = Kittybot;
 			};
 			name = Release;
 		};
@@ -917,8 +913,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FXSVDYCN2P;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.tri.SupporterCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -927,7 +923,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supporter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Supporter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kittybot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kittybot";
 			};
 			name = Debug;
 		};
@@ -939,8 +935,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FXSVDYCN2P;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.tri.SupporterCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -949,7 +945,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supporter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Supporter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kittybot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kittybot";
 			};
 			name = Release;
 		};

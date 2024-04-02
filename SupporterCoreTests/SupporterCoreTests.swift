@@ -24,6 +24,15 @@ class SupporterCoreTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        
+    }
+    
+    func testFLManager() throws {
+        //let manager = DLManager()
+        //manager.logParser("[download] 100% of  215.78KiB in 00:00:00 at 3.69MiB/s ")
+        let manager = DLManager()
+        manager.setupTask(task: DLManagerTask())
+        manager.parseFileName("New ouput: [download] Destination: /Users/kimno/Downloads/【FF14】老主顾-阿梅莉安丝……欸，真的是她吗？ [BV1Km411r74P].f30032.mp4")
     }
 
     func testPerformanceExample() throws {

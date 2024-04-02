@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Supporter
+@testable import SupporterCore
 
 final class SupporterTests: XCTestCase {
 

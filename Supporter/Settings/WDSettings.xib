@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,8 +75,8 @@
         </window>
     </objects>
     <resources>
-        <image name="gearshape.2" width="67.5" height="53"/>
-        <image name="list.clipboard" width="41.5" height="67.5"/>
+        <image name="gearshape.2" width="67" height="53"/>
+        <image name="list.clipboard" width="41" height="68"/>
         <image name="video" width="64" height="40"/>
     </resources>
 </document>

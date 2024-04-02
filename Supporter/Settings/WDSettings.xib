@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WDSettings" customModule="Kittybot" customModuleProvider="target">
+            <connections>
+                <outlet property="actionConvert" destination="WjR-74-oj9" id="JUu-Gb-aSe"/>
+                <outlet property="actionDownload" destination="tBt-T3-vU1" id="775-hl-Wfw"/>
+                <outlet property="containerView" destination="dvP-1p-Oj2" id="n3E-tJ-A5o"/>
+                <outlet property="toolBar" destination="OXx-8V-8aJ" id="vaB-l5-fN5"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" toolbarStyle="preference" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="dvP-1p-Oj2">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dvP-1p-Oj2" secondAttribute="bottom" id="EIj-f5-Kv7"/>
+                    <constraint firstAttribute="trailing" secondItem="dvP-1p-Oj2" secondAttribute="trailing" id="dEs-mA-P5n"/>
+                    <constraint firstItem="dvP-1p-Oj2" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="etd-bi-MCE"/>
+                    <constraint firstItem="dvP-1p-Oj2" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="l0A-IM-Ksc"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="4CC55617-24C8-4FC2-B8A5-80560D44CC93" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="OXx-8V-8aJ">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="RiE-qs-Ca7"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qgS-MK-MiT"/>
+                    <toolbarItem implicitItemIdentifier="36AA7923-8F10-414D-96DF-8BBDAA31DB1D" explicitItemIdentifier="Download" label="Download" paletteLabel="Download" tag="-1" sizingBehavior="auto" selectable="YES" id="tBt-T3-vU1">
+                        <imageReference key="image" image="video" symbolScale="large"/>
+                        <connections>
+                            <action selector="actionClickedDownload:" target="-2" id="Aap-ex-9Vs"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="2A6CC067-B541-4877-8CFD-CCB11DDC6754" explicitItemIdentifier="Convert" label="Convert" paletteLabel="Convert" tag="-1" sizingBehavior="auto" selectable="YES" id="WjR-74-oj9">
+                        <imageReference key="image" image="gearshape.2" symbolScale="large"/>
+                        <connections>
+                            <action selector="actionClickedConvert:" target="-2" id="CvD-rX-uBs"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E8C261D5-44ED-4AAA-A386-5D2D4994967E" explicitItemIdentifier="Presets" label="Presets" paletteLabel="Presets" tag="-1" sizingBehavior="auto" selectable="YES" id="J0G-5K-oNc">
+                        <imageReference key="image" image="list.clipboard" symbolScale="large"/>
+                        <connections>
+                            <action selector="actionClickedConvert:" target="-2" id="Ndr-vC-LcH"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="tBt-T3-vU1"/>
+                    <toolbarItem reference="WjR-74-oj9"/>
+                    <toolbarItem reference="J0G-5K-oNc"/>
+                    <toolbarItem reference="qgS-MK-MiT"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="97" y="125"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="gearshape.2" width="67.5" height="53"/>
+        <image name="list.clipboard" width="41.5" height="67.5"/>
+        <image name="video" width="64" height="40"/>
+    </resources>
+</document>

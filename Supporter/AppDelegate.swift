@@ -10,11 +10,11 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet var window: NSWindow!
-
+    let wndMain = WDMain(windowNibName: "WDMain")
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        wndMain.showWindow(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-
+    let wndSettings = WDSettings(windowNibName: "WDSettings")
+    @IBAction func clickedPerferences(_ sender: Any) {
+        wndSettings.showWindow(self)
+    }
+    
 }
 

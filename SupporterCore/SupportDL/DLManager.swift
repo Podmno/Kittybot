@@ -159,6 +159,7 @@ public class DLManager: NSObject {
         
         let pipe = Pipe()
         task.standardOutput = pipe
+        task.standardError = pipe
         let outHandle = pipe.fileHandleForReading
 
         outHandle.readabilityHandler = { pipe in
@@ -253,6 +254,10 @@ public class DLManager: NSObject {
         if (log_line.contains("has already been downloaded")) {
             sendSignal(DLManager.signalDownloadAlready)
             sendSignal(DLManager.signalDownloadFinish)
+        }
+        
+        if (log_line.contains("ERROR")) {
+            sendSignalError(log_line)
         }
     }
     

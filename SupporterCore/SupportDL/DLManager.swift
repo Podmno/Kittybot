@@ -99,6 +99,8 @@ public struct DLManagerTask {
     
     public var savePath: String = NSHomeDirectory() + "/Downloads"
     
+    public var specXAddressReplaceToTwitter = true
+    
     public init() {
         
     }
@@ -108,6 +110,8 @@ public struct DLManagerTask {
         self.url = url
         self.convertFormat = convertFormat
         self.savePath = savePath
+        
+        
     }
 }
 
@@ -122,6 +126,11 @@ public class DLManager: NSObject {
     
     public func setupTask(task: DLManagerTask) {
         self.downloadTask = task
+        
+        if (task.specXAddressReplaceToTwitter) {
+            self.downloadTask?.url = replace(validateStr: task.url, regularExpress: "x.com", contentStr: "twitter.com")
+            print("SPECIAL > specXAddressReplaceToTwitter: \(String(describing: self.downloadTask?.url))")
+        }
     }
     
     public func runTask() {

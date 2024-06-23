@@ -35,6 +35,12 @@ class WDMain: NSWindowController {
         task.convertFormat = .useDefault
         task.url = tfInput.stringValue
         
+        // Twitter Alt Process
+        
+        if (task.url.contains("x.com")) {
+            
+        }
+        
         if (popUpFormat.indexOfSelectedItem == 1) {
             task.convertFormat = .mov
         }

@@ -66,25 +66,11 @@ public struct DLSignalDownloadProgress {
 
 public struct DLManagerConfig {
     
-    public var enableExternal_ytdlp = true
-    public var externalPath_ytdlp = "/usr/local/bin/yt-dlp"
+    public var ytdlp_path = "/usr/local/bin/yt-dlp"
+    public var ffmpeg_path = "/usr/local/bin/ffmpeg"
     
-    public var internalPath_ytdlp = ""
-    
-    public var enableExternal_ffmpeg = true
-    public var externalPath_ffmpeg = "/usr/local/bin/ffmpeg"
-    
-    public var internalPath_ffmpeg = ""
     
     public var configDefaultDownloadPath = NSHomeDirectory() + "/Downloads"
-    
-    public init(enableExternal_ytdlp: Bool = true, externalPath_ytdlp: String = "/usr/local/bin/yt-dlp", enableExternal_ffmpeg: Bool = true, externalPath_ffmpeg: String = "/usr/local/bin/ffmpeg", configDefaultDownloadPath: String = NSHomeDirectory() + "/Downloads") {
-        self.enableExternal_ytdlp = enableExternal_ytdlp
-        self.externalPath_ytdlp = externalPath_ytdlp
-        self.enableExternal_ffmpeg = enableExternal_ffmpeg
-        self.externalPath_ffmpeg = externalPath_ffmpeg
-        self.configDefaultDownloadPath = configDefaultDownloadPath
-    }
     
     public init() {
         
@@ -95,6 +81,8 @@ public struct DLManagerConfig {
 // MARK: - Download Task Struct
 
 public struct DLManagerTask {
+    
+    public var managerConfig = DLManagerConfig()
     
     public var sessionID: Int = Int.random(in: 1...900000)
     
@@ -126,7 +114,6 @@ public struct DLManagerTask {
 public class DLManager: NSObject {
 
     public var downloadTask: DLManagerTask? = nil
-    public var downloadConfig: DLManagerConfig = DLManagerConfig()
     
     public func setupTask(task: DLManagerTask) {
         self.downloadTask = task
@@ -143,13 +130,14 @@ public class DLManager: NSObject {
             return
         }
         print("runTask > \(downloadTask!)")
+        print("task env info > \nyt-dlp path:\(downloadTask!.managerConfig.ytdlp_path)\nffmpeg path:\(downloadTask!.managerConfig.ffmpeg_path)")
         downloadWithoutConvertFinishFlag = 0
         let task = Process()
 
         task.launchPath = "/bin/sh"
        
         var launchCommand = ""
-        launchCommand.append("/usr/local/bin/yt-dlp ")
+        launchCommand.append("\(downloadTask!.managerConfig.ytdlp_path) ")
         launchCommand.append("'\(downloadTask!.url)'")
         launchCommand.append(" -P ")
         launchCommand.append(downloadTask!.savePath)
@@ -167,7 +155,7 @@ public class DLManager: NSObject {
             launchCommand.append(" --recode-video m4a")
         }
 
-        launchCommand.append(" --ffmpeg-location '/usr/local/bin/ffmpeg'")
+        launchCommand.append(" --ffmpeg-location '\(downloadTask!.managerConfig.ffmpeg_path)'")
         print("yt-dlp command: \(launchCommand)")
         task.arguments = ["-c" , launchCommand]
         

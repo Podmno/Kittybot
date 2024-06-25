@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D103A642C2B259D0019A89C /* yt-dlp_macos in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5D103A652C2B259D0019A89C /* ffmpeg in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5D103A612C2B25520019A89C /* ffmpeg */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5D77D8452BBB992D008EB440 /* VCSettingsVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8432BBB992D008EB440 /* VCSettingsVideo.swift */; };
 		5D77D8462BBB992D008EB440 /* VCSettingsVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D77D8442BBB992D008EB440 /* VCSettingsVideo.xib */; };
 		5D77D8492BBB9E80008EB440 /* VCSettingsConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8472BBB9E80008EB440 /* VCSettingsConvert.swift */; };
 		5D77D84A2BBB9E80008EB440 /* VCSettingsConvert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D77D8482BBB9E80008EB440 /* VCSettingsConvert.xib */; };
-		5D77D84D2BBBBAC9008EB440 /* yt-dlp_macos in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5D77D8552BBC089F008EB440 /* DLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D77D8542BBC089F008EB440 /* DLManager.swift */; };
 		5D8D46AA2BBB0F580041144E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D46A92BBB0F580041144E /* AppDelegate.swift */; };
 		5D8D46AC2BBB0F5B0041144E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D8D46AB2BBB0F5B0041144E /* Assets.xcassets */; };
@@ -72,13 +73,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5D103A632C2B25740019A89C /* Copy Tools */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				5D103A642C2B259D0019A89C /* yt-dlp_macos in Copy Tools */,
+				5D103A652C2B259D0019A89C /* ffmpeg in Copy Tools */,
+			);
+			name = "Copy Tools";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D8D46F12BBB0FBB0041144E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5D77D84D2BBBBAC9008EB440 /* yt-dlp_macos in Embed Frameworks */,
 				5D8D46ED2BBB0FBB0041144E /* SupporterCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -87,6 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D103A612C2B25520019A89C /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		5D77D8432BBB992D008EB440 /* VCSettingsVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSettingsVideo.swift; sourceTree = "<group>"; };
 		5D77D8442BBB992D008EB440 /* VCSettingsVideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VCSettingsVideo.xib; sourceTree = "<group>"; };
 		5D77D8472BBB9E80008EB440 /* VCSettingsConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCSettingsConvert.swift; sourceTree = "<group>"; };
@@ -158,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D103A602C2B25150019A89C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */,
+				5D103A612C2B25520019A89C /* ffmpeg */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		5D77D8422BBB9911008EB440 /* SubPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +227,7 @@
 		5D8D46A82BBB0F580041144E /* Supporter */ = {
 			isa = PBXGroup;
 			children = (
-				5D77D84B2BBBBAA1008EB440 /* yt-dlp_macos */,
+				5D103A602C2B25150019A89C /* Tool */,
 				5D8D47022BBB95990041144E /* Settings */,
 				5D8D46F92BBB107B0041144E /* VideoDownload */,
 				5D8D46A92BBB0F580041144E /* AppDelegate.swift */,
@@ -302,6 +324,7 @@
 				5D8D46A32BBB0F580041144E /* Frameworks */,
 				5D8D46A42BBB0F580041144E /* Resources */,
 				5D8D46F12BBB0FBB0041144E /* Embed Frameworks */,
+				5D103A632C2B25740019A89C /* Copy Tools */,
 			);
 			buildRules = (
 			);

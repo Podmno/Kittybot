@@ -14,10 +14,16 @@ class WDMain: NSWindowController {
     let wndSettings = WDSettings(windowNibName: "WDSettings")
     @IBOutlet weak var popUpFormat: NSPopUpButton!
     
+    
+    var bundled_ytdlpPath = ""
+    var bundled_ffmpegPath = ""
+    
     @IBOutlet weak var tfInput: NSTextField!
     override func windowDidLoad() {
         super.windowDidLoad()
 
+        bundled_ytdlpPath = Bundle.main.bundlePath + "/Contents/MacOS/yt-dlp_macos"
+        bundled_ffmpegPath = Bundle.main.bundlePath + "/Contents/MacOS/ffmpeg"
         
         //wndSettings.showWindow(self)
     }
@@ -31,7 +37,8 @@ class WDMain: NSWindowController {
         
         let manager = DLManager()
         var task = DLManagerTask()
-        
+        task.managerConfig.ytdlp_path = bundled_ytdlpPath
+        task.managerConfig.ffmpeg_path = bundled_ffmpegPath
         task.convertFormat = .useDefault
         task.url = tfInput.stringValue
         

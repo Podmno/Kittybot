@@ -69,8 +69,12 @@ public struct DLManagerConfig {
     public var enableExternal_ytdlp = true
     public var externalPath_ytdlp = "/usr/local/bin/yt-dlp"
     
+    public var internalPath_ytdlp = ""
+    
     public var enableExternal_ffmpeg = true
     public var externalPath_ffmpeg = "/usr/local/bin/ffmpeg"
+    
+    public var internalPath_ffmpeg = ""
     
     public var configDefaultDownloadPath = NSHomeDirectory() + "/Downloads"
     
@@ -139,6 +143,7 @@ public class DLManager: NSObject {
             return
         }
         print("runTask > \(downloadTask!)")
+        downloadWithoutConvertFinishFlag = 0
         let task = Process()
 
         task.launchPath = "/bin/sh"
@@ -207,6 +212,8 @@ public class DLManager: NSObject {
         task.launch()
     }
     
+    
+    var downloadWithoutConvertFinishFlag = 0
     func logParser(_ log_line: String) {
         
         sendSignalMainLog(log_line)
@@ -233,6 +240,25 @@ public class DLManager: NSObject {
                 // ETA
                 download_signal.currentDownloadETA = parseDownloadETA(log_line)
                 sendSignalDownloadProgress(download_signal)
+                
+                // SP: Download without convert: 100% appear twice
+                if (log_line.contains("100.0%") && downloadTask?.convertFormat == .useDefault) {
+                    downloadWithoutConvertFinishFlag = 1
+                }
+                
+                if (downloadWithoutConvertFinishFlag == 1 && downloadTask?.convertFormat == .useDefault) {
+                    // Finish Download
+                    download_signal.currentGrade = 4
+                    download_signal.currentPercent = 100
+                    download_signal.currentDownloadTotalSize = parseDownloadFinishSize(log_line)
+                    download_signal.currentDownloadETA = parseDownloadFinishTime(log_line)
+                    download_signal.currentDownloadSpeed = parseDownloadFinishSpeed(log_line)
+                    sendSignalDownloadProgress(download_signal)
+                    
+                    if (downloadTask!.convertFormat == .useDefault) {
+                        sendSignal(DLManager.signalDownloadFinish)
+                    }
+                }
             } else {
                 // Download Finished
                 if (log_line.contains("Deleting original file")) {
